@@ -1,0 +1,7 @@
+.element__like_active {
+    background-image: url(../../../../images/Union.svg) center no-repeat;
+    
+}
+.element__like_active:focus {
+    outline: none !important;
+    }

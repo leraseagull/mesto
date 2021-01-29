@@ -1,0 +1,7 @@
+.popup__button-save {
+    font-size: 18px;
+    line-height: 22px;
+}
+.popup__button-save:hover {
+    opacity: 0.6;
+}
