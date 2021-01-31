@@ -1,3 +1,6 @@
+let popup = document.querySelector(".popup");
+let buttonEditName = document.querySelector(".profile__edit-button");
+let buttonClose = document.querySelector(".popup__close");
 let name = document.querySelector(".profile__info-author");
 let job = document.querySelector(".profile__info-subline");
 let formElement = document.querySelector(".popup__form"); // Воспользуйтесь методом querySelector()
@@ -11,12 +14,6 @@ function formSubmitHandler(evt) {
     job.textContent = jobInput.value;
 }
 
-formElement.addEventListener("submit", formSubmitHandler);
-submitClose.addEventListener("click", closeForm);
-
-let popup = document.querySelector(".popup");
-let buttonEditName = document.querySelector(".profile__edit-button");
-let buttonClose = document.querySelector(".popup__close");
 
 function openEditProfile() {
     popup.classList.add("popup_opened");
@@ -28,5 +25,7 @@ function closeForm() {
     popup.classList.remove("popup_opened");
 }
 
+formElement.addEventListener("submit", formSubmitHandler);
+submitClose.addEventListener("click", closeForm);
 buttonEditName.addEventListener("click", openEditProfile);
 buttonClose.addEventListener("click", closeForm);

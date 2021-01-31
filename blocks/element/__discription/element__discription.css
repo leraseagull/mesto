@@ -3,7 +3,9 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 0 22px;
-    min-height: 78px;
+    padding-top: 25px;
+    padding-bottom: 31px;
+    padding-left: 22px;
+    padding-right: 15px;
     
 }

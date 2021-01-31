@@ -3,8 +3,8 @@
         background: url(../../../images/Vectorlike.svg) 50% no-repeat;
         background-color: transparent;
         cursor: pointer;
-        height: 19px;
         width: 22px;
+        height: 19px;
         transition: transform .3s linear;
         padding: 0;
         

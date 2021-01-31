@@ -1,17 +1,18 @@
 .popup__content {
-    margin: auto;
-    margin-top: 195px;
-    margin-bottom: 195px;
     background-color: #fff;
     width: 430px;
-    min-height: 330px;
     border-radius: 10px;
     position: relative;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     padding-top: 34px;
     padding-bottom: 37px;
     padding-left: 36px;
     padding-right: 36px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
 }
 @media screen and (max-width: 540px) {
@@ -22,10 +23,7 @@
 @media screen and (max-width: 320px) {
     .popup__content {
         min-width: 282px;
-        margin-top: 123px;
-        margin-bottom: 123px;
-        margin-left: 19px;
-        margin-right: 19px;
+        margin: auto;
         padding-top: 25px;
         padding-bottom: 25px;
         padding-left: 22px;
