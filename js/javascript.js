@@ -3,9 +3,9 @@ let buttonEditName = document.querySelector(".profile__edit-button");
 let buttonClose = document.querySelector(".popup__close");
 let name = document.querySelector(".profile__info-author");
 let job = document.querySelector(".profile__info-subline");
-let formElement = document.querySelector(".popup__form"); // Воспользуйтесь методом querySelector()
-let nameInput = document.querySelector(".popup__input_type_user-name"); // Воспользуйтесь инструментом .querySelector()
-let jobInput = document.querySelector(".popup__input_type_user-job"); // Воспользуйтесь инструментом .querySelector()
+let formElement = document.querySelector(".popup__form"); 
+let nameInput = document.querySelector(".popup__input_type_user-name"); 
+let jobInput = document.querySelector(".popup__input_type_user-job");
 let submitClose = document.querySelector(".popup__button_save");
 
 function formSubmitHandler(evt) {
