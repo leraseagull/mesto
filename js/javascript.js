@@ -86,7 +86,7 @@ function getCard(item) {
 addCard();
 
 function openPopupEditProfile(evt) {
-    // функция открытия попапа и добавление "имя" и "о себе" с html разметки в форму
+    // функция открытия попапа и добавление информации пользователя на страницу
     evt.preventDefault();
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
