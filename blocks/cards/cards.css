@@ -1,4 +1,4 @@
-.elements {
+.cards {
     display: grid;
     justify-content: center;
     grid-template-columns: 282px 282px 282px;
@@ -7,13 +7,13 @@
     margin-top: 51px;
 }
 @media screen and (max-width: 1100px) {
-    .elements {
+    .cards {
         grid-template-columns: 282px 282px;
         gap: 20px;
     }
 }
 @media screen and (max-width: 630px) {
-    .elements {
+    .cards {
         grid-template-columns: 282px;
         gap: 20px;
     }
