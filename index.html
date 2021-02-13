@@ -24,8 +24,8 @@
                     </div>
                     <button class="profile__add-button button" type="button"></button>
                 </section>
-
-                <section class="cards"></section>
+                <section class="cards">
+                </section>
             </main>
 
             <footer class="footer">
@@ -35,12 +35,12 @@
             <div class="popup popup_edit-profile">
                 <div class="popup__content">
                     <h3 class="popup__title">Редактировать профиль</h3>
-                    <form class="popup__form" name="edit-profile">
+                    <form class="popup__form popup__form-edit" name="edit-profile">
                         <input type="text" name="name" class="popup__input popup__input_type_user-name" placeholder="Имя" required />
                         <input type="text" name="job" class="popup__input popup__input_type_user-job" placeholder="О себе" required />
-                        <button type="submit" class="button popup__button popup__button_save">Сохранить</button>
+                        <button type="submit" class="button popup__button popup__button_save popup__button_save-edit"">Сохранить</button>
                     </form>
-                    <button type="button" class="popup__close"></button>
+                    <button type="button" class="popup__close popup__close_edit"></button>
                 </div>
             </div>
             <div class="popup popup_add">
@@ -74,6 +74,7 @@
                 </div>
             </template>
         </div>
+        <script src="./js/initialCards.js"></script>
         <script src="./js/javascript.js"></script>
     </body>
 </html>

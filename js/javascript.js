@@ -1,11 +1,11 @@
 const popupEditProfile = document.querySelector(".popup_edit-profile");
 const popupEditProfileOpenButton = document.querySelector(".profile__edit-button");
-const popupEditProfileCloseButton = document.querySelector(".popup__close");
+const popupEditProfileCloseButton = document.querySelector(".popup__close_edit");
 
-const formEditProfile = document.querySelector(".popup__form");
+const formEditProfile = document.querySelector(".popup__form-edit");
 const nameInput = document.querySelector(".popup__input_type_user-name");
 const jobInput = document.querySelector(".popup__input_type_user-job");
-const popupEditProfileSaveButton = document.querySelector(".popup__button_save");
+const popupEditProfileSaveButton = document.querySelector(".popup__button_save-edit");
 
 const profileName = document.querySelector(".profile__info-author");
 const profileJob = document.querySelector(".profile__info-subline");
@@ -23,34 +23,9 @@ const popupFullImageCloseButton = document.querySelector(".popup__close-full-ima
 const popupImage = document.querySelector(".popup__image");
 const popupCaption = document.querySelector(".popup__caption");
 
-const initialCards = [
-    {
-        name: "Архыз",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-    },
-    {
-        name: "Челябинская область",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-    },
-    {
-        name: "Иваново",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-    },
-    {
-        name: "Камчатка",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-    },
-    {
-        name: "Холмогорский район",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-    },
-    {
-        name: "Байкал",
-        link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-    },
-];
 
-function addCard() {
+
+function addInitialCards() {
     const htmlCards = initialCards.map(getCard);
     cardsContainer.append(...htmlCards);
 }
@@ -83,7 +58,7 @@ function getCard(item) {
     }
     return newCard;
 }
-addCard();
+addInitialCards();
 
 function openPopupEditProfile(evt) {
     // функция открытия попапа и добавление "имя" и "о себе" с html разметки в форму
@@ -93,15 +68,14 @@ function openPopupEditProfile(evt) {
     openPopup(popupEditProfile);
 }
 
-function handlerFormEditProfile(evt) {
-    // сохраняем попап и передаем введеные значения в форме в html.
+function handlerFormEditProfile(evt) {    // сохраняем попап и передаем введеные значения в форме в html.
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
+    closePopup(popupEditProfile);
 }
 
-function addCardUser(evt) {
-    //добавление карточки с помощью ввода названия и ссылки
+function addCardUser(evt) {//добавление карточки с помощью ввода названия и ссылки
     evt.preventDefault();
     const cardTitleUser = titleInput.value;
     const cardLinkUser = linkInput.value;
@@ -135,10 +109,10 @@ popupEditProfileOpenButton.addEventListener("click", openPopupEditProfile);
 popupEditProfileCloseButton.addEventListener("click", function () {
     closePopup(popupEditProfile);
 });
-popupEditProfileSaveButton.addEventListener("click", function () {
+formEditProfile.addEventListener("submit", (evt) => {
+    handlerFormEditProfile(evt);
     closePopup(popupEditProfile);
 });
-formEditProfile.addEventListener("submit", handlerFormEditProfile);
 
 //слушатели попапа добавления карточек
 popupAddOpenButton.addEventListener("click", function () {
@@ -150,4 +124,7 @@ popupAddCloseButton.addEventListener("click", function () {
 popupAddSaveButton.addEventListener("click", function () {
     closePopup(popupAdd);
 });
-formAddElement.addEventListener("submit", addCardUser);
+formAddElement.addEventListener("submit", (evt) => {
+    addCardUser(evt);
+    closePopup(popupAdd);
+});
