@@ -113,7 +113,6 @@ formEditProfile.addEventListener("submit", (evt) => {
     handlerFormEditProfile(evt);
     closePopup(popupEditProfile);
 });
-
 //слушатели попапа добавления карточек
 popupAddOpenButton.addEventListener("click", function () {
     openPopup(popupAdd);
