@@ -94,11 +94,26 @@ function deleteCardUser(evt) {
 
 function openPopup(popup) {
     popup.classList.add("popup_opened");
+    closePopupClickOverlay(popup);
 }
 
 function closePopup(popup) {
     popup.classList.remove("popup_opened");
 }
+
+const closePopupClickOverlay = (popup) => {
+    popup.addEventListener('click', (evt) => {
+      if (evt.target === popup) {
+        closePopup(popup);
+      }
+    });
+  }
+
+function closePopupKeyEsc (evt, popup) {
+    if (evt.key === 'Escape') {
+        closePopup(popup);
+    }
+};
 
 popupFullImageCloseButton.addEventListener("click", function () {
     closePopup(popupFullImage);
@@ -126,4 +141,16 @@ popupAddSaveButton.addEventListener("click", function () {
 formAddElement.addEventListener("submit", (evt) => {
     addCardUser(evt);
     closePopup(popupAdd);
+});
+
+
+//слушатели попапов закрытие при нажатии на клавишу "esc"
+document.addEventListener('keydown', (evt) => {
+    closePopupKeyEsc(evt, popupEditProfile)
+});
+document.addEventListener('keydown', (evt) => {
+    closePopupKeyEsc(evt, popupAdd)
+});
+document.addEventListener('keydown', (evt) => {
+    closePopupKeyEsc(evt, popupFullImage)
 });

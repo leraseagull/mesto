@@ -9,7 +9,7 @@
     top: -40px;
     right: -40px;
     cursor: pointer;
-    transition: transform 0.5s ease-out;
+    transition: transform 1s linear;
     border: 0;
     outline: none;
 }
