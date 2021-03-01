@@ -5,7 +5,7 @@ const popupEditProfileCloseButton = document.querySelector(".popup__close_edit")
 const formEditProfile = document.querySelector(".popup__form-edit");
 const nameInput = document.querySelector(".popup__input_type_user-name");
 const jobInput = document.querySelector(".popup__input_type_user-job");
-const popupEditProfileSaveButton = document.querySelector(".popup__button_save-edit");
+const popupEditProfileSaveButton = document.querySelector(".popup__button");
 
 const profileName = document.querySelector(".profile__info-author");
 const profileJob = document.querySelector(".profile__info-subline");
@@ -23,15 +23,13 @@ const popupFullImageCloseButton = document.querySelector(".popup__close-full-ima
 const popupImage = document.querySelector(".popup__image");
 const popupCaption = document.querySelector(".popup__caption");
 
-
+const templateCard = document.querySelector(".template");
+const cardsContainer = document.querySelector(".cards");
 
 function addInitialCards() {
     const htmlCards = initialCards.map(getCard);
     cardsContainer.append(...htmlCards);
 }
-
-const templateCard = document.querySelector(".template");
-const cardsContainer = document.querySelector(".cards");
 
 function getCard(item) {
     const newCard = templateCard.content.cloneNode(true);
@@ -58,6 +56,7 @@ function getCard(item) {
     }
     return newCard;
 }
+
 addInitialCards();
 
 function openPopupEditProfile(evt) {
@@ -72,7 +71,7 @@ function handlerFormEditProfile(evt) {    // сохраняем попап и п
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup(popupEditProfile);
+    
 }
 
 function addCardUser(evt) {//добавление карточки с помощью ввода названия и ссылки

@@ -1,6 +1,3 @@
 .popup__input_type_error {
     border-bottom: 1px solid red;
-    opacity: 0;
-    transition: .15s;
-    min-height: 15px;
 }

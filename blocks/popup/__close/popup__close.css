@@ -9,8 +9,11 @@
     top: -40px;
     right: -40px;
     cursor: pointer;
-    transition: transform 1s linear;
+    transition: transform .5s linear;
     border: 0;
+    outline: none;
+}
+.popup__close:active, .popup__close:focus {
     outline: none;
 }
 .popup__close:hover {

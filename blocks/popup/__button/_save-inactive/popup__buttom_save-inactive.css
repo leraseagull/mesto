@@ -1,7 +1,7 @@
 .popup__buttom_save-inactive {
-    border: 1px solid rgba(0, 0, 0, .15);
-    background-color: #e5e5e5;
-    opacity: 1;
-    color: rgba(0, 0, 0, .15);
+    color: #B8B8B8;
+    background: #EDEDED;
+    border: 1px solid #B8B8B8;
     pointer-events: none;
+    border-radius: 2px;
 }
