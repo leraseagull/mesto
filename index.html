@@ -55,11 +55,11 @@
                     <form class="popup__form popup__add-form" name="add-profile" novalidate>
                         <label class="popup__field">
                         <input id="title" type="text" name="title" class="popup__input popup__input_title" placeholder="Название" minlength="2" maxlength="30" required>
-                        <span class="popup__error title-error"></span>
+                        <span class="popup__error title-error" id="title-error"></span>
                     </label>
                     <label class="popup__field">
-                        <input type="url" name="link" class="popup__input popup__input_link" placeholder="Ссылка на картинку" required >
-                    <span class="popup__error link-error"></span>
+                        <input id="link" type="url" name="link" class="popup__input popup__input_link" placeholder="Ссылка на картинку" required >
+                    <span id="link-error" class="popup__error link-error"></span>
                     </label>
                         <button type="submit" class="popup__button popup__add-save">Создать</button>
                     </form>
@@ -72,7 +72,7 @@
                         <img class="popup__image" src="#" alt="#" />
                         <figcaption class="popup__caption"></figcaption>
                     </figure>
-                    <button type="button" class="popup__close-full-image" aria-label="Закрыть окно"></button>
+                    <button type="button" class="popup__close popup__close-full-image" aria-label="Закрыть окно"></button>
                 </div>
             </div>
             <template class="template">
