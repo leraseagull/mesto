@@ -1,14 +1,14 @@
 .profile__info {
-    font-family: Inter, Arial , sans-serif;
-    font-style: normal;
-    margin-right: auto;
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    row-gap: 4px;
 
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 767px) {
     .profile__info {
-        flex-direction: column;
-        align-items: center;
-        margin-right: 0;
+        margin: 0 auto 32px;
+        grid-template-columns: max-content min-content;
+        justify-items: center;
     }
 }

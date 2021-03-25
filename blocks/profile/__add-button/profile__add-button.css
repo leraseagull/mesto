@@ -7,8 +7,9 @@
     background-size: 22px;
     border: 1px solid #fff;
     padding: 0;
+    box-sizing: border-box;
     cursor: pointer;
-    transition: opacity 1s linear;
+    transition: opacity .5s linear;
 
 }
 .profile__add-button:hover {
