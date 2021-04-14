@@ -1,6 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // подключите плаг
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // подключили плагин 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
 
 module.exports = {
@@ -18,36 +18,35 @@ module.exports = {
     open: true
   },
     module: {
-    rules: [ 
+    rules: [ // rules — это массив правил
+      // добавим в него объект правил для бабеля
       {
-        
+        // регулярное выражение, которое ищет все js файлы
         test: /\.js$/,
-        
+        // при обработке этих файлов нужно использовать babel-loader
         use: 'babel-loader',
-        
+        // исключает папку node_modules, файлы в ней обрабатывать не нужно
         exclude: '/node_modules/'
       },
       {
-      test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
-      type: 'asset/resource'
-    },
-    {
-      
-      test: /\.css$/,
-      
-      use: [MiniCssExtractPlugin.loader, {
-        loader: 'css-loader',
-        options: { importLoaders: 1 }
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        type: 'asset/resource'
       },
-      'postcss-loader'
-      ]
-  }
-]
+      {
+        test: /\.css$/,
+    use: [MiniCssExtractPlugin.loader, {
+      loader: 'css-loader',
+      options: { importLoaders: 1 }
     },
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/index.html'
-  }),
+    'postcss-loader']
+      },
+      ]
+  },
+  plugins: [
+      new HtmlWebpackPlugin({
+          template: './src/index.html'
+      }),
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin()
-    ]
+  ]
 };
