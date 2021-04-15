@@ -1,7 +1,6 @@
 
 export default class Popup {
     constructor(popupSelector) {
-        this._popupSelector = popupSelector;
         this._popup = document.querySelector(popupSelector);
         this._handleEscClose = this._handleEscClose.bind(this);
     }
@@ -13,7 +12,7 @@ export default class Popup {
     }
 
     _handleOverlayClose(evt) {
-        if (evt.target !== this._popup) return; {
+        if (evt.target === this._popup) {
             this.close();
         }
     }
