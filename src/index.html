@@ -46,9 +46,9 @@
             <section class="popup" id="popup-element">
                 <form class="popup__form" id="form-element" novalidate>
                   <h3 class="popup__title">Новое место</h3>
-                  <input type="text" name="title" id="element-title" class="popup__input" placeholder="Название" minlength="2" maxlength="30" required>
+                  <input type="text" name="name" id="element-title" class="popup__input" placeholder="Название" minlength="2" maxlength="30" required>
                   <p class="popup__error element-title-error"></p>
-                  <input type="url" name="image" id="element-image" class="popup__input" placeholder="Ссылка на картинку" required>
+                  <input type="url" name="link" id="element-image" class="popup__input" placeholder="Ссылка на картинку" required>
                   <p class="popup__error element-image-error"></p>
                   <button type="submit" id="element-submit" class="popup__button">Создать</button>
                   <button type="button" class="popup__close" aria-label="Закрыть форму"></button>
@@ -57,7 +57,7 @@
 
             <section class="popup" id="popup-full-image">
                 <div class="popup-full-image">
-                        <img class="popup-full-image__image" src="#" alt="#">
+                        <img class="popup-full-image__image" src="#" alt="Здесь должно быть фото">
                         <div class="popup-full-image__caption"></div>
                     <button type="button" class="popup__close" aria-label="Закрыть окно"></button>
                 </div>
@@ -74,7 +74,7 @@
                     <button class="card__delete" type="button" aria-label="Удалить"></button>
                 </div>
                 </template>
-      </div>
+                </div>
        <!--  <script type="module" src="./index.js"></script>-->
     </body>
 </html>

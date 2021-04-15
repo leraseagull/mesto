@@ -25,6 +25,8 @@ profileEditButton.addEventListener('click', () => {
     jobInput.value = userData.job;
     popupProfileForm.open();
 });
+
+
 const popupWithImage = new PopupWithImage('#popup-full-image');
 popupWithImage.setEventListeners();
 
@@ -34,7 +36,8 @@ const cardList = new Section({
         const card = new Card(item, '#card',
         () => {
             popupWithImage.open(card._name, card._link);
-        });
+        }
+        );
         const cardElementNew = card.createCard();
         cardList.addItem(cardElementNew);
     }
@@ -50,18 +53,21 @@ formValidatorProfile.enableValidation();
 
 const popupElementForm = new PopupWithForm('#popup-element',
  (formData) => {
-     const card = new Card(formData,
+    console.log(formData);
+     const cardElement = new Card(formData,
         '#card',
         () => {
-            popupWithImage.open(card._name, card._link);
+            popupWithImage.open(cardElement._name, cardElement._link);
         });
-        const cardElementNew = card.createCard();
+        const cardElementNew = cardElement.createCard();
         cardList.addItem(cardElementNew);
         popupElementForm.close();
-    });
+    }
+);
 
-    popupElementForm.setEventListeners();
-    elementButton.addEventListener('click', () => {
-        popupElementForm.open();
-        formValidatorElement.resetError();
-    });
+
+popupElementForm.setEventListeners();
+elementButton.addEventListener('click', () => {
+   popupElementForm.open();
+     formValidatorElement.resetError();
+ });

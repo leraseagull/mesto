@@ -2,7 +2,7 @@ export default class Card {
     constructor(item, cardSelector, handleCardClick) {
       this._cardElement = document.querySelector(cardSelector).content.querySelector('.card').cloneNode(true);
       this._cardPhoto = this._cardElement.querySelector('.card__photo');
-      this._cardInfo = this._cardElement.querySelector('.card__title');
+      this._cardTitle = this._cardElement.querySelector('.card__title');
       this._cardLike = this._cardElement.querySelector('.card__like');
       this._cardDelete = this._cardElement.querySelector('.card__delete');
       this._name = item['name'];
@@ -16,7 +16,7 @@ export default class Card {
 
     _deleteCard() {
       this._cardElement.remove();
-      
+      this._cardElement = null;
     }
 
     _setEventListeners() {
@@ -28,7 +28,7 @@ export default class Card {
     createCard() {
       this._cardPhoto.alt = this._name;
       this._cardPhoto.src = this._link;
-      this._cardInfo.textContent = this._name;
+      this._cardTitle.textContent = this._name;
       this._setEventListeners();
       return this._cardElement;
     }
