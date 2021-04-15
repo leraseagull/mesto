@@ -1,67 +1,73 @@
-import "./index.css"; 
-import Card from "../js/Card";
-import { FormValidator } from "../js/FormValidator";
-import PopupWithImage from "../js/PopupWithImage";
-import PopupWithForm from "../js/PopupWithForm";
-import Section from "../js/Section";
-import UserInfo from "../js/UserInfo";
-import { selectorsForm } from "../utils/constans";
-import { popupEditProfile, formEditProfile, popupEditProfileOpenButton, nameInput, jobInput, profileName,
-    profileJob, popupAddElement, formAddElement, popupAddOpenButton, titleInput, linkInput,
-    cardsContainer, templateCard, popupFullImage, popupImage, popupCaption, popupAction,
-    buttonClose, initialCards, profileSelectors } from "../utils/constans";
-import { info } from "autoprefixer";
+import "./pages/index.css"; 
+import Card from "./components/Card"
+import FormValidator from "./components/FormValidator";
+import PopupWithImage from "./components/PopupWithImage";
+import PopupWithForm from "./components/PopupWithForm";
+import Section from "./components/Section";
+import UserInfo from "./components/UserInfo";
+import { initialCards, selectorsForm, keyClosePopup, page, popupEditProfile, formProfile, nameInput, jobInput, profileEditButton, popupElement, elementButton } from "./utils/constans";
 
-const profilePopupEdit = new PopupWithForm(popupEditProfile, (info) => userInfo.setUserInfo(info)
-);
-profilePopupEdit.setEventListeners();
-
-const popupWithImage = new PopupWithImage(popupFullImage, popupImage, popupCaption)
-PopupWithImage.setEventListeners();
-
-const popupImageAdd = new PopupWithForm(popupFullImage, (info) => {
-    const newImage = createCard(info)
-    cardList.addImage(newImage)
+const userInfo = new UserInfo({
+    profileNameSelector: '.profile__info-author',
+    profileJobSelector: '.profile__info-subline'
 });
-popupImageAdd.setEventListeners();
-
-const profileValidation = new FormValidator(selectorsForm, inputSelector)
-const imageValidation = new FormValidator(selectorsForm, inputSelector)
-
-function createCard(item) {
-const newCard = new Card(item, templateCard, {
-    handleCardClick: (name, link) => {
-        popupWithImage.open(name, link)
-    }
- })
-
- const newUserCard = newCard.generateCard();
- console.log(item)
- return newUserCard;
+const popupProfileForm = new PopupWithForm('#popup-profile',
+(formDataProfile) => {
+    userInfo.setUserInfo(formDataProfile);
+    popupProfileForm.close();
 }
+);
+popupProfileForm.setEventListeners();
+
+profileEditButton.addEventListener('click', () => {
+    const userData = userInfo.getUserInfo();
+    nameInput.value = userData.name;
+    jobInput.value = userData.job;
+    popupProfileForm.open();
+});
+
+
+const popupWithImage = new PopupWithImage('#popup-full-image');
+popupWithImage.setEventListeners();
 
 const cardList = new Section({
-    items: initialCards,
-    renderer: (cardItem) => {
-        const newCard = createCard(cardItem)
-        cardList.addItem(newCard);
+    data: initialCards,
+    renderer: (item) => {
+        const card = new Card(item, '#card',
+        () => {
+            popupWithImage.open(card._name, card._link);
+        }
+        );
+        const cardElementNew = card.createCard();
+        cardList.addItem(cardElementNew);
     }
-}, cardsContainer);
+},
+'.cards'
+);
 cardList.renderItems();
 
-popupAddOpenButton.addEventListener('click', () => {
-    popupImageAdd.open()
-    imageValidation.clearValidation();
-})
+const formValidatorProfile = new FormValidator(selectorsForm, popupEditProfile);
+const formValidatorElement = new FormValidator(selectorsForm, popupElement);
+formValidatorElement.enableValidation();
+formValidatorProfile.enableValidation();
 
-const userInfo = new UserInfo(profileSelectors)
-popupEditProfileOpenButton.addEventListener('click', () => {
-    profilePopupEdit.open();
-    const infoCurr = userInfo.getUserInfo()
-    nameInput.value = infoCurr.profileName
-    jobInput.value = infoCurr.profileJob
-    profileValidation.clearValidation();
-})
+const popupElementForm = new PopupWithForm('#popup-element',
+ (formData) => {
+    console.log(formData);
+     const cardElement = new Card(formData,
+        '#card',
+        () => {
+            popupWithImage.open(cardElement._name, cardElement._link);
+        });
+        const cardElementNew = cardElement.createCard();
+        cardList.addItem(cardElementNew);
+        popupElementForm.close();
+    }
+);
 
-imageValidation.enableValidation();
-profileValidation.enableValidation();
+
+popupElementForm.setEventListeners();
+elementButton.addEventListener('click', () => {
+   popupElementForm.open();
+     formValidatorElement.resetError();
+ });
