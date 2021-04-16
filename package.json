@@ -2,7 +2,7 @@
   "name": "new",
   "version": "1.0.0",
   "description": "https://leraseagull.github.io/mesto/\r ### Обзор",
-  "main": "../pages/index.js",
+  "main": "web",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve"
