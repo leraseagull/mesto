@@ -1,5 +1,5 @@
 export default class Card {
-    constructor(item, cardSelector, handleCardClick) {
+    constructor(item, cardSelector, {handleCardClick}) {
       this._cardElement = document.querySelector(cardSelector).content.querySelector('.card').cloneNode(true);
       this._cardPhoto = this._cardElement.querySelector('.card__photo');
       this._cardTitle = this._cardElement.querySelector('.card__title');
@@ -22,10 +22,10 @@ export default class Card {
     _setEventListeners() {
       this._cardDelete.addEventListener('click', () => this._deleteCard());
       this._cardLike.addEventListener('click', () => this._toggleLike());
-      this._cardPhoto.addEventListener('click', () => this._handleCardClick());
+      this._cardPhoto.addEventListener('click', () => this._handleCardClick(this._name, this._link));
     }
 
-    createCard() {
+    generateCard() {
       this._cardPhoto.alt = this._name;
       this._cardPhoto.src = this._link;
       this._cardTitle.textContent = this._name;
