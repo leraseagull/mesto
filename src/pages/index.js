@@ -1,3 +1,5 @@
+//пожалуйста, проверьте этот код, в предыдущем пути были не верные.
+
 import "../src/pages/index.css"; 
 import Card from "./components/Card";
 import FormValidator from "./components/FormValidator";
@@ -27,8 +29,6 @@ popupImageAdd.setEventListeners();//+
 const formValidatorProfile = new FormValidator(selectorsForm, popupEditProfile);
 const formValidatorElement = new FormValidator(selectorsForm, popupElement); //+
 
-
-/////////////////////////////////////////////////////////////////
 function createCard(item) {
 const cardElement = new Card(item, '#card', {
     handleCardClick: (name, link) => {
@@ -49,7 +49,6 @@ const cardList = new Section({
 }, '.cards');
  
 cardList.renderItems();
-///////////////////////////////////////////////////////////////
 
 
 elementButton.addEventListener('click', () => {
