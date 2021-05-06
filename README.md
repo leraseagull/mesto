@@ -1,7 +1,7 @@
-# Проект 8: Место #
+# Проект 9: Место #
 
 ## Ссылка на проект: ##
-https://leraseagull.github.io/mesto/
+https://leraseagull.github.io/mesto/index.html
 ### Обзор
 
 * Что за проект?
