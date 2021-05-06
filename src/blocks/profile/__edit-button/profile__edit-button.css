@@ -1,14 +1,15 @@
 .profile__edit-button {
     background: no-repeat center url(../../../images/EditButton.svg);
-    background-color: initial;
+    background-color: inherit;
     outline: none;
-    margin-bottom: 14px;
+    align-items:center;
+    margin-left: 17px;
     width: 24px;
-    height: 24px;
-    border: 1px solid #fff;
-    align-self: end;
+    min-height: 24px;
+    border: 1px solid white;
     cursor: pointer;
     transition: opacity .5s linear;
+    padding: 0;
 
 }
 .profile__edit-button:hover {
@@ -18,10 +19,16 @@
     outline: none;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1100px) {
+        .profile__edit-button {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 660px) {
         .profile__edit-button {
             width: 18px;
-            height: 18px;
+            min-height: 18px;
             margin-left: 10px;
         }
     }
