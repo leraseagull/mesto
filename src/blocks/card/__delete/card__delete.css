@@ -1,14 +1,11 @@
 .card__delete {
     position: absolute;
-    background: url(../../../images/Groupdelete.svg);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 100%;
+    background-image: url(../../../images/Groupdelete.svg);
+    background-color: transparent;
     top: 18px;
     right: 15px;
     width: 18px;
     height: 19px;
-    padding: 0;
     cursor: pointer;
     border: none;
     transition: .5s;

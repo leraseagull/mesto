@@ -1,19 +1,21 @@
 .popup__form {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 430px;
-  margin: auto;
-  padding: 34px 36px 36px;
-  box-sizing: border-box;
-  width: 100%;
+  padding-top: 34px;
+  padding-bottom: 36px;
+  width: calc(100% - 38px);
   background-color: #fff;
   box-shadow: 0 0 25px rgba(0, 0, 0, .15);
   border-radius: 10px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 660px) {
   .popup__form {
-    padding: 27px 22px 40px;
-    width: calc(100% - 38px);
+    padding-top: 27px;
+    padding-bottom: 22px;
 
   }
 }

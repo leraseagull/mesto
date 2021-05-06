@@ -1,5 +1,9 @@
 .content {
-    max-width: 882px;
-    margin: auto;
-    padding: 40px 15px 0 15px; 
+    margin: auto; 
+}
+
+@media screen and (max-width: 918px) {
+  .content {
+    max-width: calc(100% - 38px);
+ }
 }

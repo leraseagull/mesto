@@ -1,10 +1,10 @@
 .profile__add-button {
-    width: 150px;
-    height: 50px;
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-left: auto;
+    min-width: 150px;
+    min-height: 50px;
     background: no-repeat center url(../../../images/VectoraddButton.svg);
     background-size: 22px;
+    background-color: inherit;
     border: 1px solid #fff;
     padding: 0;
     box-sizing: border-box;
@@ -16,17 +16,15 @@
   opacity: 0.6;
 }
 
-@media screen and (max-width: 831px) {
+.profile__add-button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 660px) {
   .profile__add-button {
-    margin-top: 36px;
+    margin: 36px 0 0 0;
+    width: 282px;
+    background-size: 16px;
   }
 
 }
-@media screen and (max-width: 336px) {
-    .profile__add-button {
-      margin: 0;
-      margin-top: 36px;
-      width: 282px;
-    }
-  
-  }
