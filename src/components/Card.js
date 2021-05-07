@@ -1,13 +1,12 @@
-import { userId } from '../pages/index';
-
 export default class Card {
-    constructor({ item, selector, handleCardClick, handleDeleteClick, handleLikeClick }) {
+    constructor({ item, selector, handleCardClick, handleDeleteClick, handleLikeClick, userId }) {
       this._card = document.querySelector(selector).content.querySelector('.card').cloneNode(true);
       this._cardPhoto = this._card.querySelector('.card__photo');
       this._cardTitle = this._card.querySelector('.card__title');
       this._cardLike = this._card.querySelector('.card__like');
       this._cardDelete = this._card.querySelector('.card__delete');
       this.likeCount = this._card.querySelector('.card__like-count');
+      this._userID = userId;
       this.name = item['name'];
       this.link = item['link'];
       this._handleCardClick = handleCardClick;
@@ -44,7 +43,7 @@ export default class Card {
     }
 
     createCard() {
-      if (this._idOwnerCard !== userId) {
+      if (this._idOwnerCard !== this._userID) {
         this._cardDelete.remove();
       }
       if (this.likeOwner) {

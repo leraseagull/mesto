@@ -14,7 +14,5 @@ export default class PopupWithButton extends Popup {
         })
         super.setEventListeners();
     }
-    deleteCard(cardId) {
 
-    }
 }
