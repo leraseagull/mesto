@@ -1,3 +1,4 @@
+
 import "../pages/index.css";
 import Card from "../components/Card";
 import FormValidator from "../components/FormValidator";
@@ -7,7 +8,7 @@ import Section from "../components/Section";
 import UserInfo from "../components/UserInfo";
 import { selectorsForm, buttonAvatarEdit, 
     buttonSubmitProfile, popupAvatarEdit, 
-    buttonSubmitAvatarEdit, popupAvatarInput, address, token, 
+    buttonSubmitAvatarEdit, address, token, 
     popupEditProfile, nameInput, jobInput, 
     profileEditButton, popupElement, buttonSubmitElement, 
     elementButton } from "../utils/constans";
@@ -15,8 +16,7 @@ import { selectorsForm, buttonAvatarEdit,
 import Api from "../components/Api";
 import PopupWithButton from "../components/PopupWithButton";
 
-export let userId = "0";
-
+let userId = 0;
 
 const popupWithImage = new PopupWithImage('#popup-full-image');
 popupWithImage.setEventListeners(); 
@@ -48,9 +48,8 @@ const card = new Card(
                 card.toggleLike(response.likes.length);
             }).catch(err => console.error(err));
         }
-    }
- }
- );
+    },
+ }, userId);
  return card.createCard(data);
 }
 
@@ -60,6 +59,7 @@ const card = new Card(
         api.deleteCard()
         .then(() => {
             api.elem.deleteCard();
+            popupDeleteCard.close();
     }).catch(err => console.error(err));
     }
  });
