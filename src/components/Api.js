@@ -92,8 +92,7 @@ export default class Api {
         }).then(this._checkResponse);
     }
 
-    editAvatarPhoto( link ) {
-        console.log( link )
+    editAvatarPhoto({ link }) {
         return fetch(`${this._address}/users/me/avatar`,
         {
             method: "PATCH",

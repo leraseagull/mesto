@@ -34,5 +34,4 @@ export const selectorsForm = {
   export const popupAvatarEdit = page.querySelector('#popup-avatar');
   export const buttonSubmitAvatarEdit = popupAvatarEdit.querySelector('#avatar-submit');
   export const popupAvatarInput = document.forms['avatar-photo'].elements['link'];
-
   
