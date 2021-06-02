@@ -17,4 +17,4 @@
     - JavaScript
     - работа с DOM интерфейсом
 
-Посмотреть работу можно по ссылке: https://leraseagull.github.io/mesto/
+Посмотреть работу можно по ссылке: https://leraseagull.github.io/mesto/index.html
