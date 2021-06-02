@@ -5,6 +5,7 @@
     align-items: center;
     color: #fff;
     padding-top: 40px;
+    margin: auto;
 }
 
 @media screen and (max-width: 660px) {
