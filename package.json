@@ -7,11 +7,15 @@
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
-    "webpack": "^5.37.1",
+    "gh-pages": "^3.2.0",
+    "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },
   "scripts": {
-    "build": "webpack"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -22,5 +26,5 @@
   "bugs": {
     "url": "https://github.com/leraseagull/mesto/issues"
   },
-  "homepage": "https://github.com/leraseagull/mesto#readme"
+  "homepage": "https://github.com/leraseagull/mesto"
 }
